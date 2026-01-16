@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
     min-height: 100vh;
     padding: 20px;
     color: #333;
@@ -15,32 +15,39 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    background: white;
+    background: #1a1a1a;
     border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);
+    border: 2px solid #FFD700;
     overflow: hidden;
 }
 
 header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #32CD32 100%);
+    color: #000000;
     padding: 30px;
     text-align: center;
+    border-bottom: 4px solid #000000;
 }
 
 header h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    color: #000000;
 }
 
 header p {
     font-size: 1.1em;
+    color: #000000;
+    font-weight: 600;
     opacity: 0.9;
 }
 
 #calculatorForm {
     padding: 30px;
+    background: #1a1a1a;
 }
 
 .form-group {
@@ -51,7 +58,7 @@ header p {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
-    color: #555;
+    color: #FFD700;
     font-size: 0.95em;
 }
 
@@ -59,18 +66,24 @@ header p {
 .form-group select {
     width: 100%;
     padding: 12px 15px;
-    border: 2px solid #e0e0e0;
+    border: 2px solid #FFD700;
     border-radius: 8px;
     font-size: 1em;
     transition: all 0.3s ease;
-    background-color: white;
+    background-color: #000000;
+    color: #FFD700;
 }
 
 .form-group input:focus,
 .form-group select:focus {
     outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    border-color: #32CD32;
+    box-shadow: 0 0 0 3px rgba(50, 205, 50, 0.3);
+    background-color: #0a0a0a;
+}
+
+.form-group input::placeholder {
+    color: #666;
 }
 
 .attributes-grid {
@@ -100,31 +113,38 @@ button {
 }
 
 #calculateBtn {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    color: #000000;
+    border: 2px solid #32CD32;
 }
 
 #calculateBtn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 10px 20px rgba(255, 215, 0, 0.5);
+    background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
 }
 
 #clearBtn {
-    background: #f5f5f5;
-    color: #666;
+    background: #000000;
+    color: #FFD700;
+    border: 2px solid #FFD700;
 }
 
 #clearBtn:hover {
-    background: #e0e0e0;
+    background: #1a1a1a;
     transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+    border-color: #32CD32;
+    color: #32CD32;
 }
 
 .result {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    color: white;
+    background: linear-gradient(135deg, #FFD700 0%, #32CD32 50%, #FFA500 100%);
+    color: #000000;
     padding: 40px;
     text-align: center;
     margin-top: 20px;
+    border-top: 4px solid #000000;
 }
 
 .result.hidden {
@@ -134,19 +154,23 @@ button {
 .result h2 {
     font-size: 1.8em;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: #000000;
+    font-weight: bold;
 }
 
 .result-value {
     font-size: 4em;
     font-weight: bold;
     margin: 20px 0;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    color: #000000;
 }
 
 .result-position {
     font-size: 1.3em;
-    opacity: 0.9;
+    color: #000000;
+    font-weight: 600;
     margin-top: 10px;
 }
 
