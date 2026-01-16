@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Overall - PES6</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚽ Calculadora de Overall - PES6</h1>
+            <p>Preencha os atributos do jogador para calcular o overall</p>
+        </header>
+
+        <form id="calculatorForm">
+            <div class="form-group">
+                <label for="position">Posição:</label>
+                <select id="position">
+                    <option value="">Selecione uma posição</option>
+                    <option value="atacante">Atacante</option>
+                    <option value="centroavante">Centroavante</option>
+                    <option value="meiaArmador">Meia Armador</option>
+                    <option value="meiaDefensivo">Meia Defensivo</option>
+                    <option value="lateral">Lateral</option>
+                    <option value="zagueiro">Zagueiro</option>
+                    <option value="goleiro">Goleiro</option>
+                </select>
+            </div>
+
+            <div class="attributes-grid">
+                <div class="form-group">
+                    <label for="attack">Ataque:</label>
+                    <input type="number" id="attack" min="0" max="99" placeholder="0-99">
+                </div>
+
+                <div class="form-group">
+                    <label for="defense">Defesa:</label>
+                    <input type="number" id="defense" min="0" max="99" placeholder="0-99">
+                </div>
+
+                <div class="form-group">
+                    <label for="gkSkills">Habilidades de Goleiro:</label>
+                    <input type="number" id="gkSkills" min="0" max="99" placeholder="0-99">
+                </div>
+
+                <div class="form-group">
+                    <label for="technique">Técnica:</label>
+                    <input type="number" id="technique" min="0" max="99" placeholder="0-99">
+                </div>
+
+                <div class="form-group">
+                    <label for="dribbleAccuracy">Precisão de Drible:</label>
+                    <input type="number" id="dribbleAccuracy" min="0" max="99" placeholder="0-99">
+                </div>
+
+                <div class="form-group">
+                    <label for="dribbleSpeed">Velocidade de Drible:</label>
+                    <input type="number" id="dribbleSpeed" min="0" max="99" placeholder="0-99">
+                </div>
+
+                <div class="form-group">
+                    <label for="shotAccuracy">Precisão de Chute:</label>
+                    <input type="number" id="shotAccuracy" min="0" max="99" placeholder="0-99">
+                </div>
+
+                <div class="form-group">
+                    <label for="shotTechnique">Técnica de Chute:</label>
+                    <input type="number" id="shotTechnique" min="0" max="99" placeholder="0-99">
+                </div>
+
+                <div class="form-group">
+                    <label for="acceleration">Aceleração:</label>
+                    <input type="number" id="acceleration" min="0" max="99" placeholder="0-99">
+                </div>
+
+                <div class="form-group">
+                    <label for="agility">Agilidade:</label>
+                    <input type="number" id="agility" min="0" max="99" placeholder="0-99">
+                </div>
+
+                <div class="form-group">
+                    <label for="topSpeed">Velocidade Máxima:</label>
+                    <input type="number" id="topSpeed" min="0" max="99" placeholder="0-99">
+                </div>
+
+                <div class="form-group">
+                    <label for="shortPassAccuracy">Precisão de Passe Curto:</label>
+                    <input type="number" id="shortPassAccuracy" min="0" max="99" placeholder="0-99">
+                </div>
+
+                <div class="form-group">
+                    <label for="longPassAccuracy">Precisão de Passe Longo:</label>
+                    <input type="number" id="longPassAccuracy" min="0" max="99" placeholder="0-99">
+                </div>
+
+                <div class="form-group">
+                    <label for="response">Resposta:</label>
+                    <input type="number" id="response" min="0" max="99" placeholder="0-99">
+                </div>
+
+                <div class="form-group">
+                    <label for="shotPower">Força de Chute:</label>
+                    <input type="number" id="shotPower" min="0" max="99" placeholder="0-99">
+                </div>
+
+                <div class="form-group">
+                    <label for="balance">Equilíbrio:</label>
+                    <input type="number" id="balance" min="0" max="99" placeholder="0-99">
+                </div>
+
+                <div class="form-group">
+                    <label for="stamina">Resistência:</label>
+                    <input type="number" id="stamina" min="0" max="99" placeholder="0-99">
+                </div>
+
+                <div class="form-group">
+                    <label for="shortPassSpeed">Velocidade de Passe Curto:</label>
+                    <input type="number" id="shortPassSpeed" min="0" max="99" placeholder="0-99">
+                </div>
+
+                <div class="form-group">
+                    <label for="longPassSpeed">Velocidade de Passe Longo:</label>
+                    <input type="number" id="longPassSpeed" min="0" max="99" placeholder="0-99">
+                </div>
+
+                <div class="form-group">
+                    <label for="freeKickAccuracy">Precisão de Falta:</label>
+                    <input type="number" id="freeKickAccuracy" min="0" max="99" placeholder="0-99">
+                </div>
+
+                <div class="form-group">
+                    <label for="mentality">Mentalidade:</label>
+                    <input type="number" id="mentality" min="0" max="99" placeholder="0-99">
+                </div>
+
+                <div class="form-group">
+                    <label for="teamwork">Trabalho em Equipe:</label>
+                    <input type="number" id="teamwork" min="0" max="99" placeholder="0-99">
+                </div>
+
+                <div class="form-group">
+                    <label for="aggression">Agressividade:</label>
+                    <input type="number" id="aggression" min="0" max="99" placeholder="0-99">
+                </div>
+
+                <div class="form-group">
+                    <label for="swerve">Efeito:</label>
+                    <input type="number" id="swerve" min="0" max="99" placeholder="0-99">
+                </div>
+
+                <div class="form-group">
+                    <label for="heading">Cabeceio:</label>
+                    <input type="number" id="heading" min="0" max="99" placeholder="0-99">
+                </div>
+
+                <div class="form-group">
+                    <label for="jump">Salto:</label>
+                    <input type="number" id="jump" min="0" max="99" placeholder="0-99">
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button type="button" id="calculateBtn">Calcular Overall</button>
+                <button type="button" id="clearBtn">Limpar Campos</button>
+            </div>
+        </form>
+
+        <div id="result" class="result hidden">
+            <h2>Overall Calculado</h2>
+            <div class="result-value">
+                <span id="overallValue">0</span>
+            </div>
+            <div class="result-position" id="positionDisplay"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
