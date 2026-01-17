@@ -325,9 +325,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     clearBtn.addEventListener('click', clearFields);
 
-    // Permite calcular pressionando Enter em qualquer campo e bloqueia caracteres não numéricos
-    const inputs = document.querySelectorAll('input[type="number"]');
-    inputs.forEach(input => {
+    // Permite calcular pressionando Enter e bloqueia caracteres não numéricos
+    const inputs = Array.from(document.querySelectorAll('input[type="number"]'));
+    inputs.forEach((input, index) => {
         // Bloqueia caracteres não numéricos
         input.addEventListener('keypress', function(e) {
             // Permite: números (0-9), Enter, Backspace, Delete, Tab, Escape, setas
@@ -339,9 +339,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 return false;
             }
             
+            // Enter avança para o próximo campo ou calcula se for o último
             if (e.key === 'Enter') {
                 e.preventDefault();
-                calculateBtn.click();
+                const nextIndex = index + 1;
+                if (nextIndex < inputs.length) {
+                    inputs[nextIndex].focus();
+                    inputs[nextIndex].select();
+                } else {
+                    // Se for o último campo, calcula
+                    calculateBtn.click();
+                }
+            }
+        });
+        
+        // Auto-avança quando digitar 2 números
+        input.addEventListener('input', function(e) {
+            const value = e.target.value;
+            // Se tiver 2 dígitos e o valor for válido (50-99), avança
+            if (value.length === 2 && parseInt(value) >= 50 && parseInt(value) <= 99) {
+                const nextIndex = index + 1;
+                if (nextIndex < inputs.length) {
+                    setTimeout(() => {
+                        inputs[nextIndex].focus();
+                        inputs[nextIndex].select();
+                    }, 50);
+                }
             }
         });
         
@@ -357,6 +380,16 @@ document.addEventListener('DOMContentLoaded', function() {
             const numericValue = pastedText.replace(/[^0-9]/g, '');
             if (numericValue) {
                 input.value = numericValue;
+                // Se colou 2 dígitos válidos, avança
+                if (numericValue.length === 2 && parseInt(numericValue) >= 50 && parseInt(numericValue) <= 99) {
+                    const nextIndex = index + 1;
+                    if (nextIndex < inputs.length) {
+                        setTimeout(() => {
+                            inputs[nextIndex].focus();
+                            inputs[nextIndex].select();
+                        }, 50);
+                    }
+                }
             }
         });
     });
