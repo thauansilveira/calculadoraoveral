@@ -39,6 +39,63 @@ const positionNames = {
     'goleiro': 'Goleiro'
 };
 
+// Mapeamento de nomes de atributos em português
+const attributeNamesPT = {
+    'Attack': 'Ataque',
+    'Defense': 'Defesa',
+    'GK Skills': 'Habilidade GK',
+    'Technique': 'Técnica',
+    'Dribble accuracy': 'Precisão de Drible',
+    'Dribble speed': 'Velocidade de Drible',
+    'Shot accuracy': 'Precisão de Chute',
+    'Shot technique': 'Técnica de Chute',
+    'Acceleration': 'Aceleração',
+    'Agility': 'Agilidade',
+    'Top speed': 'Velocidade Máxima',
+    'Short pass accuracy': 'Precisão de Passe Curto',
+    'Long pass accuracy': 'Precisão de Passe Longo',
+    'Response': 'Reação',
+    'Shot power': 'Força do Chute',
+    'Balance': 'Equilíbrio',
+    'Stamina': 'Resistência',
+    'Short pass speed': 'Velocidade de Passe Curto',
+    'Long pass speed': 'Velocidade de Passe Longo',
+    'Free kick accuracy': 'Precisão de Cobrança de Falta',
+    'Mentality': 'Mentalidade',
+    'Teamwork': 'Trabalho em Equipe',
+    'Aggression': 'Agressividade',
+    'Swerve': 'Efeito',
+    'Heading': 'Cabeceio',
+    'Jump': 'Salto'
+};
+
+// Mapeamento de habilidades especiais em português
+const specialAbilityNamesPT = {
+    'dribbling': 'Drible',
+    'tacticalDribble': 'Drible Tático',
+    'positioning': 'Posicionamento',
+    'reaction': 'Reação',
+    'playmaking': 'Criação de Jogo',
+    'passing': 'Passe',
+    'scoring': 'Finalização',
+    'oneOnOneFinish': 'Finalização 1x1',
+    'areaPlayer': 'Jogador de Área',
+    'lines': 'Linhas',
+    'middleShooting': 'Chute de longe',
+    'side': 'Lado',
+    'center': 'Centro',
+    'penalties': 'Pênaltis',
+    'oneTouchPass': 'Passe de Primeira',
+    'outside': 'Fora',
+    'marking': 'Marcação',
+    'slidingTackle': 'Carrinho',
+    'covering': 'Cobertura',
+    'dLineControl': 'Controle de Linha D',
+    'penaltyStopper': 'Defensor de Pênalti',
+    'oneOnOneStopper': 'Defensor 1x1',
+    'longThrow': 'Lançamento Longo'
+};
+
 // Pesos para cada posição
 const positionWeights = {
     // Atacante
@@ -289,6 +346,8 @@ function displayResult(overall, position) {
     const resultDiv = document.getElementById('result');
     const overallValue = document.getElementById('overallValue');
     const positionDisplay = document.getElementById('positionDisplay');
+    const attributesList = document.getElementById('attributesList');
+    const specialAbilitiesList = document.getElementById('specialAbilitiesList');
 
     overallValue.textContent = overall;
     resultDiv.classList.remove('hidden');
@@ -297,6 +356,44 @@ function displayResult(overall, position) {
         positionDisplay.textContent = `Posição: ${positionNames[position]}`;
     } else {
         positionDisplay.textContent = '';
+    }
+
+    // Coletar e exibir todos os atributos
+    let attributesHTML = '<div class="attributes-grid-display">';
+    for (const [fieldId, attributeName] of Object.entries(attributeMap)) {
+        const input = document.getElementById(fieldId);
+        if (input) {
+            const value = input.value || '0';
+            const ptName = attributeNamesPT[attributeName] || attributeName;
+            attributesHTML += `
+                <div class="attribute-item">
+                    <span class="attribute-name">${ptName}:</span>
+                    <span class="attribute-value">${value}</span>
+                </div>
+            `;
+        }
+    }
+    attributesHTML += '</div>';
+    attributesList.innerHTML = attributesHTML;
+
+    // Coletar e exibir habilidades especiais marcadas
+    const activeStars = document.querySelectorAll('.star-checkbox.active');
+    if (activeStars.length > 0) {
+        let specialAbilitiesHTML = '<div class="special-abilities-grid">';
+        activeStars.forEach(star => {
+            const skillName = star.getAttribute('data-skill');
+            const ptName = specialAbilityNamesPT[skillName] || skillName;
+            specialAbilitiesHTML += `
+                <div class="special-ability-item">
+                    <span class="star-icon">⭐</span>
+                    <span class="special-ability-name">${ptName}</span>
+                </div>
+            `;
+        });
+        specialAbilitiesHTML += '</div>';
+        specialAbilitiesList.innerHTML = specialAbilitiesHTML;
+    } else {
+        specialAbilitiesList.innerHTML = '<p class="no-special-abilities">Nenhuma habilidade especial selecionada</p>';
     }
 
     // Scroll suave até o resultado
@@ -308,6 +405,11 @@ function clearFields() {
     const form = document.getElementById('calculatorForm');
     form.reset();
     document.getElementById('result').classList.add('hidden');
+    // Reseta todas as estrelas
+    const starCheckboxes = document.querySelectorAll('.star-checkbox');
+    starCheckboxes.forEach(star => {
+        star.classList.remove('active');
+    });
 }
 
 // Event listeners
@@ -389,6 +491,36 @@ document.addEventListener('DOMContentLoaded', function() {
                             inputs[nextIndex].select();
                         }, 50);
                     }
+                }
+            }
+        });
+    });
+    
+    // Sistema de estrelas - uma estrela por habilidade, máximo 5 habilidades
+    const starCheckboxes = document.querySelectorAll('.star-checkbox');
+    let selectedStars = 0;
+    const maxStars = 5;
+    
+    // Conta quantas estrelas estão ativas
+    function countActiveStars() {
+        return document.querySelectorAll('.star-checkbox.active').length;
+    }
+    
+    // Clique nas estrelas
+    starCheckboxes.forEach((star) => {
+        star.addEventListener('click', function() {
+            const isActive = this.classList.contains('active');
+            const currentCount = countActiveStars();
+            
+            if (isActive) {
+                // Desmarca a estrela
+                this.classList.remove('active');
+            } else {
+                // Tenta marcar a estrela
+                if (currentCount < maxStars) {
+                    this.classList.add('active');
+                } else {
+                    alert(`Você pode marcar no máximo ${maxStars} habilidades com estrela!`);
                 }
             }
         });
