@@ -43,20 +43,20 @@ const positionNames = {
 const positionWeights = {
     // Atacante
     'atacante': {
-        'Attack': 1.3,
+        'Attack': 1.5,
+        'Shot accuracy': 1.5,
+        'Balance': 1.5,
         'Technique': 1.3,
+        'Acceleration': 1.4,
+        'Top speed': 1.4,
         'Dribble accuracy': 1.2,
+        'Agility': 1.2,
         'Dribble speed': 1.1,
-        'Shot accuracy': 1.1,
         'Shot technique': 1.0,
-        'Acceleration': 1.0,
-        'Agility': 1.0,
-        'Top speed': 0.9,
         'Short pass accuracy': 0.7,
         'Long pass accuracy': 0.7,
         'Response': 0.6,
         'Shot power': 0.6,
-        'Balance': 0.5,
         'Stamina': 0.4,
         'Short pass speed': 0.4,
         'Long pass speed': 0.4,
@@ -72,73 +72,73 @@ const positionWeights = {
     
     // Meia Defensivo
     'meiaDefensivo': {
-        'Attack': 0.8,
-        'Defense': 1.3,
-        'Balance': 1.0,
-        'Stamina': 1.0,
-        'Top speed': 0.6,
-        'Acceleration': 0.6,
+        'Balance': 1.4,
+        'Stamina': 1.2,
+        'Defense': 1.2,
         'Response': 1.1,
-        'Agility': 0.4,
-        'Dribble accuracy': 0.5,
-        'Dribble speed': 0.3,
         'Short pass accuracy': 0.9,
-        'Short pass speed': 0.7,
         'Long pass accuracy': 0.9,
-        'Long pass speed': 0.7,
-        'Shot accuracy': 0.4,
-        'Shot power': 0.6,
-        'Shot technique': 0.4,
-        'Free kick accuracy': 0.2,
-        'Swerve': 0.1,
-        'Heading': 0.6,
-        'Jump': 0.5,
-        'Technique': 0.7,
-        'Mentality': 0.9,
         'Teamwork': 1.0,
-        'Aggression': 0.8
+        'Attack': 0.8,
+        'Aggression': 0.8,
+        'Acceleration': 0.8,
+        'Mentality': 0.8,
+        'Short pass speed': 0.7,
+        'Long pass speed': 0.7,
+        'Technique': 0.7,
+        'Shot accuracy': 0.7,
+        'Shot power': 0.6,
+        'Heading': 0.6,
+        'Top speed': 0.6,
+        'Dribble accuracy': 0.5,
+        'Jump': 0.5,
+        'Agility': 0.4,
+        'Shot technique': 0.4,
+        'Dribble speed': 0.3,
+        'Free kick accuracy': 0.2,
+        'Swerve': 0.1
     },
     
     // Zagueiro
     'zagueiro': {
-        'Attack': 0.4,
-        'Defense': 1.6,
-        'Balance': 1.1,
+        'Balance': 1.6,
+        'Jump': 1.6,
+        'Defense': 1.5,
+        'Heading': 1.2,
+        'Acceleration': 1.1,
+        'Top speed': 1.1,
+        'Mentality': 1.1,
         'Stamina': 1.0,
-        'Top speed': 0.8,
-        'Acceleration': 0.9,
-        'Response': 1.3,
-        'Agility': 0.7,
-        'Dribble accuracy': 0.4,
-        'Dribble speed': 0.3,
-        'Short pass accuracy': 0.7,
-        'Short pass speed': 0.4,
-        'Long pass accuracy': 0.5,
+        'Free kick accuracy': 1.0,
+        'Response': 0.9,
+        'Aggression': 0.8,
+        'Teamwork': 0.7,
+        'Short pass accuracy': 0.4,
+        'Agility': 0.4,
+        'Shot power': 0.5,
+        'Long pass accuracy': 0.3,
+        'Technique': 0.3,
         'Long pass speed': 0.3,
         'Shot accuracy': 0.3,
-        'Shot power': 0.5,
         'Shot technique': 0.3,
-        'Free kick accuracy': 0.1,
-        'Swerve': 0.1,
-        'Heading': 1.2,
-        'Jump': 1.2,
-        'Technique': 0.8,
-        'Mentality': 0.9,
-        'Teamwork': 1.0,
-        'Aggression': 0.8
+        'Dribble accuracy': 0.3,
+        'Short pass speed': 0.3,
+        'Dribble speed': 0.2,
+        'Attack': 0.2,
+        'Swerve': 0.1
     },
     
     'centroavante': {
-        'Attack': 1.6,
-        'Balance': 1.2,
-        'Shot accuracy': 1.1,
+        'Attack': 1.5,
+        'Balance': 1.5,
+        'Shot accuracy': 1.4,
+        'Heading': 1.4,
+        'Acceleration': 1.3,
+        'Top speed': 1.2,
         'Shot technique': 1.1,
         'Shot power': 0.9,
-        'Heading': 1.0,
         'Jump': 0.8,
         'Response': 0.7,
-        'Top speed': 0.6,
-        'Acceleration': 0.7,
         'Agility': 0.5,
         'Technique': 0.6,
         'Dribble accuracy': 0.5,
@@ -157,27 +157,27 @@ const positionWeights = {
     },
     
     'meiaArmador': {
-        'Technique': 1.3,
-        'Attack': 1.2,
-        'Dribble accuracy': 1.1,
-        'Dribble speed': 0.9,
-        'Short pass accuracy': 1.1,
-        'Short pass speed': 0.8,
+        'Technique': 1.5,
+        'Dribble speed': 1.4,
+        'Dribble accuracy': 1.2,
+        'Short pass accuracy': 1.2,
+        'Balance': 1.2,
+        'Attack': 1.3,
+        'Top speed': 1.2,
+        'Acceleration': 1.2,
         'Long pass accuracy': 1.0,
+        'Agility': 1.0,
+        'Shot technique': 1.0,
+        'Free kick accuracy': 1.0,
+        'Shot power': 1.0,
+        'Short pass speed': 0.8,
         'Long pass speed': 0.8,
-        'Agility': 0.8,
-        'Acceleration': 0.8,
-        'Top speed': 0.6,
+        'Shot accuracy': 0.8,
         'Response': 0.7,
-        'Shot accuracy': 0.6,
-        'Shot technique': 0.5,
-        'Shot power': 0.4,
-        'Balance': 0.5,
         'Stamina': 0.4,
-        'Free kick accuracy': 0.5,
         'Swerve': 0.4,
-        'Mentality': 0.3,
         'Teamwork': 0.4,
+        'Mentality': 0.3,
         'Heading': 0.2,
         'Jump': 0.2,
         'Defense': 0,
@@ -185,60 +185,60 @@ const positionWeights = {
     },
     
     'lateral': {
-        'Defense': 1.2,
-        'Response': 1.0,
-        'Stamina': 1.1,
+        'Stamina': 1.4,
+        'Defense': 1.4,
+        'Acceleration': 1.2,
         'Top speed': 1.1,
-        'Acceleration': 1.0,
-        'Balance': 0.7,
-        'Agility': 0.7,
+        'Balance': 1.1,
+        'Response': 1.0,
+        'Long pass accuracy': 1.0,
+        'Free kick accuracy': 1.0,
         'Short pass accuracy': 0.8,
+        'Agility': 0.7,
+        'Shot accuracy': 0.7,
+        'Long pass speed': 0.9,
         'Short pass speed': 0.6,
-        'Long pass accuracy': 0.7,
-        'Long pass speed': 0.6,
         'Dribble accuracy': 0.5,
+        'Technique': 0.5,
+        'Shot technique': 0.5,
+        'Shot power': 0.5,
         'Dribble speed': 0.4,
         'Attack': 0.4,
-        'Technique': 0.5,
         'Teamwork': 0.4,
         'Mentality': 0.4,
         'Aggression': 0.4,
         'Jump': 0.4,
         'Heading': 0.4,
-        'Swerve': 0.2,
-        'Free kick accuracy': 0.2,
-        'Shot accuracy': 0,
-        'Shot technique': 0,
-        'Shot power': 0
+        'Swerve': 0.2
     },
     
     'goleiro': {
-        'GK Skills': 2.2,
-        'Defense': 1.2,
-        'Response': 1.0,
+        'GK Skills': 1.9,
+        'Defense': 1.4,
+        'Response': 1.1,
         'Jump': 0.9,
-        'Agility': 0.7,
-        'Balance': 0.6,
+        'Agility': 0.9,
+        'Balance': 1.0,
+        'Short pass accuracy': 0.7,
+        'Long pass accuracy': 0.7,
+        'Shot power': 0.7,
+        'Short pass speed': 0.7,
+        'Long pass speed': 0.7,
         'Technique': 0.5,
         'Mentality': 0.4,
         'Stamina': 0.3,
         'Teamwork': 0.3,
         'Top speed': 0.2,
         'Acceleration': 0.2,
+        'Heading': 0.2,
         'Attack': 0,
         'Dribble accuracy': 0,
         'Dribble speed': 0,
         'Shot accuracy': 0,
         'Shot technique': 0,
-        'Short pass accuracy': 0,
-        'Long pass accuracy': 0,
-        'Shot power': 0,
-        'Short pass speed': 0,
-        'Long pass speed': 0,
         'Free kick accuracy': 0,
         'Aggression': 0,
-        'Swerve': 0,
-        'Heading': 0
+        'Swerve': 0
     }
 };
 
@@ -265,9 +265,9 @@ function calculateOverall() {
         const value = parseFloat(input.value) || 0;
         const weight = weights[attributeName] || 0;
 
-        // Valida se o valor está no range válido (0-99)
-        if (input.value && (value < 0 || value > 99)) {
-            alert(`O valor de ${attributeName} deve estar entre 0 e 99!`);
+        // Valida se o valor está no range válido (50-99)
+        if (input.value && (value < 50 || value > 99)) {
+            alert(`O valor de ${attributeName} deve estar entre 50 e 99!`);
             return null;
         }
 
@@ -325,13 +325,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
     clearBtn.addEventListener('click', clearFields);
 
-    // Permite calcular pressionando Enter em qualquer campo
+    // Permite calcular pressionando Enter em qualquer campo e bloqueia caracteres não numéricos
     const inputs = document.querySelectorAll('input[type="number"]');
     inputs.forEach(input => {
+        // Bloqueia caracteres não numéricos
         input.addEventListener('keypress', function(e) {
+            // Permite: números (0-9), Enter, Backspace, Delete, Tab, Escape, setas
+            const allowedKeys = ['Enter', 'Backspace', 'Delete', 'Tab', 'Escape', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'];
+            const isNumber = /[0-9]/.test(e.key);
+            
+            if (!isNumber && !allowedKeys.includes(e.key) && !e.ctrlKey && !e.metaKey) {
+                e.preventDefault();
+                return false;
+            }
+            
             if (e.key === 'Enter') {
                 e.preventDefault();
                 calculateBtn.click();
+            }
+        });
+        
+        // Seleciona todo o texto ao focar no campo (facilita edição)
+        input.addEventListener('focus', function(e) {
+            e.target.select();
+        });
+        
+        // Bloqueia colar texto não numérico
+        input.addEventListener('paste', function(e) {
+            e.preventDefault();
+            const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+            const numericValue = pastedText.replace(/[^0-9]/g, '');
+            if (numericValue) {
+                input.value = numericValue;
             }
         });
     });
