@@ -158,14 +158,14 @@ const positionWeights = {
     
     // Zagueiro
     'zagueiro': {
-        'Balance': 1.8,
-        'Defense': 1.8,
+        'Balance': 2.0,
+        'Defense': 2.0,
         'Jump': 1.3,
         'Heading': 1.4,
-        'Acceleration': 1.2,
+        'Acceleration': 1.5,
         'Top speed': 1.2,
         'Mentality': 1.1,
-        'Stamina': 1.1,
+        'Stamina': 1.5,
         'Free kick accuracy': 1.0,
         'Response': 1.1,
         'Aggression': 0.8,
