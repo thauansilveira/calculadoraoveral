@@ -130,7 +130,7 @@ const positionWeights = {
     // Meia Defensivo
     'meiaDefensivo': {
         'Balance': 1.8,
-        'Defense': 1.8,
+        'Defense': 2.0,
         'Attack': 1.0,
         'Stamina': 1.1,
         'Response': 1.1,
